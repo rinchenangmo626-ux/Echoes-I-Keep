@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #eee9e3;
+    color: #4d4a47;
+    line-height: 1.8;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    padding: 100px 20px 85px;
+    background: #c9b8b5;
+    color: #514b4a;
+}
+
+header h1 {
+    font-size: 58px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+header .author {
+    font-size: 18px;
+    font-style: italic;
+    color: #69605e;
+    margin-bottom: 18px;
+}
+
+header p:not(.author) {
+    font-size: 17px;
+    color: #625b59;
+}
+
+/* Main */
+
+main {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 85px 25px;
+}
+
+/* Introduction */
+
+.intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 90px;
+}
+
+.intro h2,
+.stories h2 {
+    font-size: 35px;
+    font-weight: normal;
+    color: #5b5552;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 18px;
+    color: #686360;
+}
+
+/* Stories */
+
+.stories {
+    margin-bottom: 90px;
+}
+
+.story-card {
+    background: #f8f5f1;
+    padding: 42px;
+    border: 1px solid #d8d0ca;
+    margin-top: 30px;
+    box-shadow: 0 8px 25px rgba(80, 70, 65, 0.06);
+}
+
+.story-card h3 {
+    font-size: 28px;
+    font-weight: normal;
+    color: #514c49;
+    margin-bottom: 15px;
+}
+
+.story-card p {
+    color: #716c68;
+    margin-bottom: 28px;
+}
+
+/* Button */
+
+button {
+    background: #9d8b88;
+    color: #fffaf7;
+    border: none;
+    padding: 12px 24px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #81726f;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid #d8d0ca;
+    color: #817b77;
+    font-size: 14px;
+}
