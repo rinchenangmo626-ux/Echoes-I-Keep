@@ -1,122 +1,1253 @@
+/* =========================================
+   ECHOES I KEEP
+   VERSION 2 — EDITORIAL DESIGN
+
+   Palette:
+   Warm Sand
+   Deep Forest / Ink
+   Muted Terracotta
+   ========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
+    background: #F3EEE3;
+    color: #20251F;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section-label {
+    margin-bottom: 24px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   HEADER / NAVIGATION
+   ========================================= */
+
+header {
+    background: #F3EEE3;
+    border-bottom: 1px solid #D5CEC0;
+}
+
+nav {
+    max-width: 1180px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: #20251F;
     font-family: Georgia, "Times New Roman", serif;
-    background: #eee9e3;
-    color: #4d4a47;
+    font-size: 1.35rem;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: #62655D;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #466052;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    max-width: 820px;
+    padding: 110px 0 105px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: #466052;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+}
+
+.author {
+    margin-top: 22px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin-top: 35px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.65;
+}
+
+/* =========================================
+   FEATURED
+   ========================================= */
+
+/*
+   This section deliberately uses deep forest
+   so the page has a strong visual change.
+*/
+
+.featured {
+    margin-left: -40px;
+    margin-right: -40px;
+    padding: 85px 90px;
+
+    background: #466052;
+    color: #F3EEE3;
+}
+
+.featured .section-label {
+    color: #D9B09A;
+}
+
+.featured-article {
+    max-width: 850px;
+}
+
+.category {
+    margin-bottom: 12px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.featured .category {
+    color: #D9B09A;
+}
+
+.featured-article h2 {
+    max-width: 850px;
+    color: #F3EEE3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+}
+
+.featured-article > p:not(.category) {
+    max-width: 650px;
+    margin-top: 25px;
+    color: #E5E0D5;
+    font-size: 1.05rem;
+}
+
+.read-link {
+    display: inline-block;
+    margin-top: 25px;
+    color: #A2674F;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #A2674F;
+    padding-bottom: 3px;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.read-link:hover {
+    color: #7E4A38;
+    border-color: #7E4A38;
+    opacity: 0.85;
+}
+
+/* Featured section needs a lighter link */
+
+.featured .read-link {
+    color: #D9B09A;
+    border-color: #D9B09A;
+}
+
+.featured .read-link:hover {
+    color: #F0CDBA;
+    border-color: #F0CDBA;
+}
+
+/* =========================================
+   EXPLORE
+   ========================================= */
+
+.explore {
+    padding: 85px 0;
+    border-top: 1px solid #D5CEC0;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    background: #D5CEC0;
+    border: 1px solid #D5CEC0;
+}
+
+.category-card {
+    min-height: 210px;
+    padding: 32px;
+    background: #F3EEE3;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.category-card:hover {
+    background: #E9E2D5;
+}
+
+.category-card h3 {
+    margin-bottom: 15px;
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+}
+
+.category-card p {
+    color: #62655D;
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+/* =========================================
+   LATEST ESSAYS
+   ========================================= */
+
+.latest {
+    padding: 85px 0;
+    border-top: 1px solid #D5CEC0;
+}
+
+.article-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #D5CEC0;
+}
+
+.article-preview {
+    min-height: 230px;
+    padding: 30px;
+    border-right: 1px solid #D5CEC0;
+}
+
+.article-preview:last-child {
+    border-right: none;
+}
+
+.article-preview h3 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.55rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+.about-preview {
+    max-width: 850px;
+    padding: 90px 0 110px;
+    border-top: 1px solid #D5CEC0;
+}
+
+.about-preview h2 {
+    max-width: 750px;
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.about-preview > p:not(.section-label) {
+    max-width: 650px;
+    margin-top: 25px;
+    color: #62655D;
+    font-size: 1rem;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #20251F;
+    border-top: 1px solid #20251F;
+    padding: 30px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    color: #D9D4C8;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    nav {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 22px;
+        padding-bottom: 22px;
+    }
+
+    .nav-links {
+        justify-content: flex-start;
+    }
+
+    .featured {
+        margin-left: -40px;
+        margin-right: -40px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .article-list {
+        grid-template-columns: 1fr;
+    }
+
+    .article-preview {
+        border-right: none;
+        border-bottom: 1px solid #D5CEC0;
+    }
+
+    .article-preview:last-child {
+        border-bottom: none;
+    }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    main {
+        padding: 0 22px;
+    }
+
+    nav {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .nav-links {
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
+    .hero {
+        padding: 75px 0 75px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+    }
+
+    .featured {
+        margin-left: -22px;
+        margin-right: -22px;
+        padding: 60px 22px;
+    }
+
+    .featured-article h2 {
+        font-size: 2.6rem;
+    }
+
+    .explore,
+    .latest {
+        padding: 60px 0;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        min-height: auto;
+    }
+
+    .about-preview {
+        padding: 65px 0 80px;
+    }
+
+    footer {
+        padding: 25px 22px;
+        flex-direction: column;
+    }
+}   
+    
+
+
+
+
+ 
+
+
+/* =========================================
+   ESSAY PAGE
+   ========================================= */
+
+.essay-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 0 120px;
+}
+
+/* -----------------------------------------
+   ESSAY HEADER
+   ----------------------------------------- */
+
+.essay-header {
+    max-width: 850px;
+   margin-bottom: 90px;
+    border-bottom: 1px solid #D5CEC0;
+    padding-bottom: 50px;
+}
+
+.essay-header .category {
+    margin-bottom: 22px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.essay-header h1 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+}
+
+.essay-author {
+    margin-top: 28px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+
+/* -----------------------------------------
+   ESSAY BODY
+   ----------------------------------------- */
+
+.essay-body {
+    max-width: 720px;
+    margin: 30px auto 0;
+}
+}
+
+.essay-body p {
+    margin-bottom: 34px;
+    color: #30352F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.15rem;
+    line-height: 1.95;
+}
+
+.essay-body p:first-child {
+    margin-top: 0;
+}
+
+
+/* -----------------------------------------
+   ESSAY NAVIGATION
+   ----------------------------------------- */
+
+.essay-navigation {
+    max-width: 720px;
+    margin: 100px auto 0;
+    padding-top: 35px;
+    border-top: 1px solid #D5CEC0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.previous-essay,
+.next-essay {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0;
+
+    transition: color 0.2s ease;
+}
+
+.previous-essay {
+    text-align: left;
+}
+
+.next-essay {
+    text-align: right;
+}
+
+.previous-essay span,
+.next-essay span {
+    color: #A2674F;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.previous-essay strong,
+.next-essay strong {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.previous-essay:hover strong,
+.next-essay:hover strong {
+    color: #466052;
+}
+
+
+/* -----------------------------------------
+   RELATED ESSAYS
+   ----------------------------------------- */
+
+.related-essays {
+    margin-top: 120px;
+    padding-top: 55px;
+    border-top: 1px solid #D5CEC0;
+}
+
+.related-essays .section-label {
+    margin-bottom: 30px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    background: #D5CEC0;
+    border: 1px solid #D5CEC0;
+}
+
+.related-card {
+    min-height: 190px;
+    padding: 28px;
+    background: #F3EEE3;
+
+    transition: background 0.25s ease;
+}
+
+.related-card:hover {
+    background: #E9E2D5;
+}
+
+.related-card .category {
+    margin-bottom: 15px;
+    color: #466052;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.related-card h3 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+
+/* =========================================
+   ESSAY PAGE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .essay-page {
+        padding: 70px 0 85px;
+    }
+
+    .essay-header {
+        margin-bottom: 50px;
+        padding-bottom: 35px;
+    }
+
+    .essay-header h1 {
+        font-size: 3rem;
+    }
+
+    .essay-body p {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+
+    .essay-navigation {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 75px;
+    }
+
+    .next-essay {
+        text-align: left;
+    }
+
+    .related-essays {
+        margin-top: 85px;
+    }
+
+    .related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .related-card {
+        min-height: auto;
+    }
+}
+
+/* =========================================
+   ABOUT PAGE
+   ========================================= */
+
+.about-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 0 120px;
+}
+
+
+/* -----------------------------------------
+   ABOUT HEADER
+   ----------------------------------------- */
+
+.about-header {
+    max-width: 850px;
+    margin-bottom: 75px;
+    padding-bottom: 55px;
+    border-bottom: 1px solid #D5CEC0;
+}
+
+.about-header .eyebrow {
+    margin-bottom: 24px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.about-header h1 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.about-subtitle {
+    max-width: 650px;
+    margin-top: 30px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+
+/* -----------------------------------------
+   ABOUT CONTENT
+   ----------------------------------------- */
+
+.about-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 30px;
+    color: #30352F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    line-height: 1.9;
+}
+
+
+/* -----------------------------------------
+   ABOUT WRITER
+   ----------------------------------------- */
+
+.about-author {
+    max-width: 720px;
+    margin: 110px auto 0;
+    padding-top: 55px;
+    border-top: 1px solid #D5CEC0;
+}
+
+.about-author .section-label {
+    margin-bottom: 25px;
+}
+
+.about-author h2 {
+    margin-bottom: 20px;
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.about-author p:last-child {
+    max-width: 650px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
     line-height: 1.8;
 }
 
-/* Header */
 
-header {
-    text-align: center;
-    padding: 100px 20px 85px;
-    background: #c9b8b5;
-    color: #514b4a;
+/* =========================================
+   ABOUT PAGE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .about-page {
+        padding: 70px 0 85px;
+    }
+
+    .about-header {
+        margin-bottom: 55px;
+        padding-bottom: 40px;
+    }
+
+    .about-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .about-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .about-content p {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+
+    .about-author {
+        margin-top: 80px;
+        padding-top: 45px;
+    }
+
+    .about-author h2 {
+        font-size: 2.3rem;
+    }
 }
 
-header h1 {
-    font-size: 58px;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+/* =========================================
+   ESSAYS PAGE
+   ========================================= */
+
+.essays-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 0 120px;
 }
 
-header .author {
-    font-size: 18px;
-    font-style: italic;
-    color: #69605e;
+
+/* -----------------------------------------
+   ESSAYS HEADER
+   ----------------------------------------- */
+
+.essays-header {
+    max-width: 850px;
+    margin-bottom: 80px;
+    padding-bottom: 55px;
+    border-bottom: 1px solid #D5CEC0;
+}
+
+.essays-header .eyebrow {
+    margin-bottom: 24px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.essays-header h1 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.essays-introduction {
+    max-width: 680px;
+    margin-top: 30px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.65;
+}
+
+
+/* -----------------------------------------
+   ESSAY LIST
+   ----------------------------------------- */
+
+.essays-list {
+    border-top: 1px solid #D5CEC0;
+}
+
+.essay-card {
+    padding: 50px 0 55px;
+    border-bottom: 1px solid #D5CEC0;
+}
+
+.essay-card .category {
     margin-bottom: 18px;
 }
 
-header p:not(.author) {
-    font-size: 17px;
-    color: #625b59;
+.essay-card h2 {
+    max-width: 800px;
+    margin-bottom: 18px;
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
 }
 
-/* Main */
+.essay-card h2 a {
+    transition: color 0.2s ease;
+}
 
-main {
-    max-width: 950px;
+.essay-card h2 a:hover {
+    color: #466052;
+}
+
+.essay-card > p:not(.category) {
+    max-width: 680px;
+    margin-bottom: 5px;
+    color: #62655D;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.essay-card .read-link {
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   ESSAYS PAGE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .essays-page {
+        padding: 70px 0 85px;
+    }
+
+    .essays-header {
+        margin-bottom: 55px;
+        padding-bottom: 40px;
+    }
+
+    .essays-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .essays-introduction {
+        font-size: 1.15rem;
+    }
+
+    .essay-card {
+        padding: 40px 0 45px;
+    }
+
+    .essay-card h2 {
+        font-size: 2rem;
+    }
+
+    .essay-card > p:not(.category) {
+        font-size: 0.98rem;
+    }
+}
+
+/* =========================================
+   IDEAS PAGE
+   ========================================= */
+
+.ideas-page {
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 85px 25px;
+    padding: 100px 0 120px;
 }
 
-/* Introduction */
 
-.intro {
-    text-align: center;
+/* -----------------------------------------
+   IDEAS HEADER
+   ----------------------------------------- */
+
+.ideas-header {
+    max-width: 850px;
+    margin-bottom: 75px;
+    padding-bottom: 55px;
+    border-bottom: 1px solid #D5CEC0;
+}
+
+.ideas-header .eyebrow {
+    margin-bottom: 24px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.ideas-header h1 {
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.ideas-introduction {
     max-width: 700px;
+    margin-top: 30px;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.65;
+}
+
+
+/* -----------------------------------------
+   IDEAS INTRODUCTION
+   ----------------------------------------- */
+
+.ideas-intro {
+    max-width: 720px;
     margin: 0 auto 90px;
 }
 
-.intro h2,
-.stories h2 {
-    font-size: 35px;
-    font-weight: normal;
-    color: #5b5552;
-    margin-bottom: 20px;
+.ideas-intro p {
+    color: #30352F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    line-height: 1.9;
 }
 
-.intro p {
-    font-size: 18px;
-    color: #686360;
+
+/* -----------------------------------------
+   AREAS OF INQUIRY
+   ----------------------------------------- */
+
+.ideas-themes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+
+    background: #D5CEC0;
+    border: 1px solid #D5CEC0;
 }
 
-/* Stories */
+.idea-theme {
+    min-height: 260px;
+    padding: 40px;
+    background: #F3EEE3;
 
-.stories {
-    margin-bottom: 90px;
+    transition: background 0.25s ease;
 }
 
-.story-card {
-    background: #f8f5f1;
-    padding: 42px;
-    border: 1px solid #d8d0ca;
-    margin-top: 30px;
-    box-shadow: 0 8px 25px rgba(80, 70, 65, 0.06);
+.idea-theme:hover {
+    background: #E9E2D5;
 }
 
-.story-card h3 {
-    font-size: 28px;
-    font-weight: normal;
-    color: #514c49;
-    margin-bottom: 15px;
+.idea-theme .category {
+    margin-bottom: 22px;
+    color: #A2674F;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
 }
 
-.story-card p {
-    color: #716c68;
-    margin-bottom: 28px;
+.idea-theme h2 {
+    max-width: 420px;
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
-/* Button */
 
-button {
-    background: #9d8b88;
-    color: #fffaf7;
-    border: none;
-    padding: 12px 24px;
-    font-family: Georgia, serif;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.3s ease;
+/* -----------------------------------------
+   EDITORIAL NOTE
+   ----------------------------------------- */
+
+.ideas-note {
+    max-width: 720px;
+    margin: 110px auto 0;
+    padding-top: 50px;
+    border-top: 1px solid #D5CEC0;
 }
 
-button:hover {
-    background: #81726f;
+.ideas-note .section-label {
+    margin-bottom: 25px;
 }
 
-/* Footer */
+.ideas-note p:last-child {
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
 
-footer {
-    text-align: center;
-    padding: 35px;
-    border-top: 1px solid #d8d0ca;
-    color: #817b77;
-    font-size: 14px;
+
+/* =========================================
+   IDEAS PAGE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .ideas-page {
+        padding: 70px 0 85px;
+    }
+
+    .ideas-header {
+        margin-bottom: 55px;
+        padding-bottom: 40px;
+    }
+
+    .ideas-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .ideas-introduction {
+        font-size: 1.15rem;
+    }
+
+    .ideas-intro {
+        margin-bottom: 65px;
+    }
+
+    .ideas-intro p {
+        font-size: 1.08rem;
+        line-height: 1.85;
+    }
+
+    .ideas-themes {
+        grid-template-columns: 1fr;
+    }
+
+    .idea-theme {
+        min-height: auto;
+        padding: 35px;
+    }
+
+    .idea-theme h2 {
+        font-size: 1.8rem;
+    }
+
+    .ideas-note {
+        margin-top: 80px;
+        padding-top: 40px;
+    }
+}
+
+/* =========================================
+   ESSAY PAGE — CURRENT STRUCTURE
+   ========================================= */
+
+.essay-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 0 120px;
+}
+
+/* Essay heading area */
+
+.essay-category {
+    margin-bottom: 22px;
+    color: #466052;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.essay-page h1 {
+    max-width: 850px;
+    color: #20251F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+}
+
+/* Introductory sentence */
+
+.essay-intro {
+    max-width: 720px;
+    margin-top: 32px;
+    margin-bottom: 85px !important;
+    color: #62655D;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+/* Main essay */
+
+.essay-content {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.essay-content p {
+    margin-bottom: 30px;
+
+    color: #30352F;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    line-height: 1.9;
+}
+
+/* Give the final paragraph a little breathing room */
+
+.essay-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   ESSAY PAGE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .essay-page {
+        padding: 70px 22px 85px;
+    }
+
+    .essay-page h1 {
+        font-size: 3rem;
+    }
+
+    .essay-intro {
+        margin-top: 25px;
+        margin-bottom: 60px;
+        font-size: 1.1rem;
+    }
+
+    .essay-content p {
+        font-size: 1.08rem;
+        line-height: 1.85;
+        margin-bottom: 28px;
+    }
 }
