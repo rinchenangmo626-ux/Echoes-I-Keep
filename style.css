@@ -71,13 +71,14 @@ nav {
 }
 
 .logo {
-    color: #20251F;
-    font-family: Georgia, "Times New Roman", serif;
+    color: #A2674F;
+    font-family: Georgia, "Times New Roman", sans-serif;
     font-size: 1.35rem;
     letter-spacing: 0.02em;
     white-space: nowrap;
+    border-bottom: 1px solid #A2674F;
+    padding-bottom: 3px;
 }
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -529,7 +530,7 @@ footer {
     max-width: 720px;
     margin: 30px auto 0;
 }
-}
+
 
 .essay-body p {
     margin-bottom: 34px;
